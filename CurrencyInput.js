@@ -1,6 +1,4 @@
-import { Select } from "@mui/material"
 import React  from "react"
-import './CurrencyInput.css'
 import {View} from 'react-native`'
 
 
