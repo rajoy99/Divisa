@@ -1,5 +1,5 @@
 import React from "react";
-import {View } from "react-native";
+import { View } from "react-native";
 import { Picker } from "@react-native-picker/picker";
 
 const CurrencyInput = (props) => {
@@ -25,8 +25,9 @@ const CurrencyInput = (props) => {
       selectedValue={props.currency}
       onValueChange={(ev) => props.onCurrencyChange(ev.target.value)}
     >
-      <Picker.Item label="Java" value="java" />
-      <Picker.Item label="JavaScript" value="js" />
+      {props.currencies.map((currency) => (
+        <Picker.Item label={currency} value={currency} />
+      ))}
     </Picker>
   );
 };

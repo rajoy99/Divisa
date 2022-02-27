@@ -64,7 +64,7 @@ const App = () => {
   }, []);
 
   return (
-    <View>
+    <View style={{marginTop:30}}>
       <CurrencyInput
         currencies={Object.keys(rates)}
         amount={amount1}
@@ -72,7 +72,6 @@ const App = () => {
         onAmountChange={onAmountChange1}
         onCurrencyChange={onCurrencychange1}
       />
-      <br></br>
       <CurrencyInput
         currencies={Object.keys(rates)}
         amount={amount2}
