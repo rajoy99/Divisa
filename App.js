@@ -3,6 +3,7 @@ import { StyleSheet, Text, View } from 'react-native';
 import { useState,useEffect } from 'react';
 import CurrencyInput from './CurrencyInput';
 import axios from 'axios';
+import {Picker} from '@react-native-picker/picker';
 
 const App = () =>  
 {
@@ -13,6 +14,15 @@ const [currency1,setcurrency1]=useState('USD')
 const [currency2,setcurrency2]=useState('USD')
 const [rates,setrates]=useState({})
 
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+});
 
 
 console.log(" Type of Rates array elements : ",typeof rates)
@@ -50,16 +60,6 @@ const cardstyle = {
 }
 
 
-// useEffect(() => {
-//   if (!!rates) {
-//     function init() {
-//       onAmountChange1(1);
-//     }
-//     init();
-//   }
-// }, [rates]);
-
-
 
   useEffect(
     ()=>{
@@ -73,7 +73,7 @@ const cardstyle = {
 
 
   return (
-    <View className="App">
+    <View>
 
 
             <CurrencyInput
@@ -96,11 +96,3 @@ const cardstyle = {
 }
 
 export default App;
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
