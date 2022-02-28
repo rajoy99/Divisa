@@ -1,5 +1,5 @@
 import React from "react";
-import { View } from "react-native";
+import { TextInput, View } from "react-native";
 import { Picker } from "@react-native-picker/picker";
 
 const CurrencyInput = (props) => {
@@ -20,15 +20,24 @@ const CurrencyInput = (props) => {
     //     ))}
     //   </Select>
     // </View>
+    <View>
+      <TextInput
+        placeholder="Enter Amount to Convert"
+        onChangeText={(ev) => props.onAmountChange(ev.target.value)}
+        value={props.amount}
+        keyboardType="number-pad"
+        maxLength={12}
+      />
 
-    <Picker
-      selectedValue={props.currency}
-      onValueChange={(ev) => props.onCurrencyChange(ev.target.value)}
-    >
-      {props.currencies.map((currency) => (
-        <Picker.Item label={currency} value={currency} />
-      ))}
-    </Picker>
+      <Picker
+        selectedValue={props.currency}
+        onValueChange={(ev) => props.onCurrencyChange(ev.target.value)}
+      >
+        {props.currencies.map((currency) => (
+          <Picker.Item label={currency} value={currency} />
+        ))}
+      </Picker>
+    </View>
   );
 };
 
